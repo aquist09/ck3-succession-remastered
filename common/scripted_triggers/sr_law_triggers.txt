@@ -1,0 +1,77 @@
+
+can_have_partition_succession_law_trigger = {
+	culture = {
+		has_innovation = innovation_gavelkind
+		# Updated from innovation_hereditary_rule to innovation_gavelkind to comply with new unlock
+	}
+	custom_description = {
+		text = succession_laws_must_have_organised_government_tooltip
+		OR = {
+			has_government = feudal_government
+			has_government = clan_government
+		}
+	}
+}
+
+can_have_high_partition_succession_law_trigger = {
+	trigger_if = {
+		limit = {
+			OR = {
+				has_culture = culture:occitan
+				has_culture = culture:basque
+				has_culture = culture:aragonese
+				has_culture = culture:catalan
+			}
+			culture = {
+				NOT = { has_innovation = innovation_hereditary_rule }
+				# Updated from innovation_heraldry to innovation_hereditary_rule to comply with new unlock
+			}
+		}
+		culture = { has_innovation = innovation_visigothic_codes }
+	}
+	trigger_else = {
+		culture = { has_innovation = innovation_hereditary_rule }
+		# Updated from innovation_heraldry to innovation_hereditary_rule to comply with new unlock
+	}
+	custom_description = {
+		text = succession_laws_must_have_organised_government_tooltip
+		OR = {
+			has_government = feudal_government
+			has_government = clan_government
+		}
+	}
+}
+
+can_have_single_heir_dynasty_house_trigger = {
+	exists = house
+	trigger_if = {
+		limit = {
+			OR = {
+				has_culture = culture:czech
+				has_culture = culture:slovien
+			}
+			culture = {
+				NOT = {
+					has_innovation = innovation_hereditary_rule
+					# Updated from innovation_heraldry to innovation_hereditary_rule to comply with new unlock
+				}
+			}
+		}
+		culture = {
+			has_innovation = innovation_table_of_princes
+		}
+	}
+	trigger_else = {
+		culture = {
+			has_innovation = innovation_hereditary_rule
+			# Updated from innovation_heraldry to innovation_hereditary_rule to comply with new unlock
+		}
+	}
+	custom_description = {
+		text = succession_laws_must_have_organised_government_tooltip
+		OR = {
+			has_government = feudal_government
+			has_government = clan_government
+		}
+	}
+}

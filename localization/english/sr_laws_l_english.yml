@@ -1,0 +1,3 @@
+﻿l_english:
+ crown_authority_3:0 "Absolute Crown Authority"
+ crown_authority_3_effects:1 "$EFFECT_LIST_BULLET$[vassals|E] cannot wage any [war|E] unless they use a [hook|E] on their [liege|E]\n$EFFECT_LIST_BULLET$Rulers can designate their [heir|E] with the Written Wills [innovation|E]."

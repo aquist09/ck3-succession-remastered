@@ -1,0 +1,18 @@
+can_designate_heir_trigger = {	
+	custom_description = {
+		text = "has_law_allowing_designate_heir"
+		has_realm_law_flag = can_designate_heirs_law
+		# Changed variable name from can_designate_heirs to can_designate_heirs_law in order to differenciate between required law and required innovation
+	}	
+	custom_description = {
+		text = "dynasty_member_leads_election"
+		NAND = {
+			primary_title = {
+				has_title_law_flag = elective_succession_law
+			}
+			dynasty = primary_heir.dynasty
+		}
+	}
+	# Added requirement for new innovation innovation_written_wills
+	culture = { has_innovation = innovation_written_wills }
+}
