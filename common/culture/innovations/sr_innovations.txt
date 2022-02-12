@@ -1,4 +1,4 @@
-# Variables for icon families
+# Variables for icon paths
 @administration_1 = "gfx/interface/icons/culture_innovations/innovation_administration_01.dds"
 @administration_2 = "gfx/interface/icons/culture_innovations/innovation_administration_02.dds"
 @administration_3 = "gfx/interface/icons/culture_innovations/innovation_administration_03.dds"
@@ -15,8 +15,6 @@
 @weapons_and_armor_01 = "gfx/interface/icons/culture_innovations/innovation_weapons_and_armor_01.dds"
 @weapons_and_armor_02 = "gfx/interface/icons/culture_innovations/innovation_weapons_and_armor_02.dds"
 @knight = "gfx/interface/icons/culture_innovations/innovation_knight.dds"
-@hird = "gfx/interface/icons/culture_innovations/innovation_hird.dds"
-@longboats = "gfx/interface/icons/culture_innovations/innovation_longboats.dds"
 @majesty_01 = "gfx/interface/icons/culture_innovations/innovation_majesty_01.dds"
 @majesty_02 = "gfx/interface/icons/culture_innovations/innovation_majesty_02.dds"
 @majesty_03 = "gfx/interface/icons/culture_innovations/innovation_majesty_03.dds"
@@ -30,7 +28,6 @@
 @elephant = "gfx/interface/icons/culture_innovations/innovation_elephant.dds"
 @special_maa_01 = "gfx/interface/icons/culture_innovations/innovation_special_maa_01.dds"
 @special_maa_02 = "gfx/interface/icons/culture_innovations/innovation_special_maa_02.dds"
-
 
 # Succession based innovations to overwrite
 innovation_gavelkind = {
@@ -85,7 +82,7 @@ innovation_heraldry = {
 # English Description Text: "Establishing hereditary designs to identify our noble families will cause their members to see themselves as part of a greater whole, encouraging them to improve their dynasty's reputation instead of merely being obsessed with personal status."
 
 innovation_primogeniture = {
-	# Moved promogeniture innovation to high medieval era and added monthly prestige gain multiplier of 5%
+	# Moved promogeniture innovation to high medieval era and added monlty prestige gain multiplier of 5%
 	group = culture_group_civic
 	culture_era = culture_era_high_medieval
 	icon = @majesty_01
