@@ -1,0 +1,127 @@
+form_carolingian_empire_scripted_effect = {
+	save_scope_as = scoped_ruler
+	title:e_hre.holder = { save_scope_as = scoped_emperor }
+	#De jure shifts.
+	hidden_effect = {
+		title:k_france = {
+			set_de_jure_liege_title = title:e_france
+		}
+		title:k_burgundy = {
+			set_de_jure_liege_title = title:e_france
+		}
+		title:k_aquitaine = {
+			set_de_jure_liege_title = title:e_france
+		}
+		title:k_brittany = {
+			set_de_jure_liege_title = title:e_france
+		}
+		title:k_frisia = {
+			set_de_jure_liege_title = title:e_france
+		}
+		title:k_lotharingia = {
+			set_de_jure_liege_title = title:e_france
+		}
+		title:k_bavaria = {
+			set_de_jure_liege_title = title:e_france
+		}
+		title:k_east_francia = {
+			set_de_jure_liege_title = title:e_france
+		}
+		title:k_italy = {
+			set_de_jure_liege_title = title:e_france
+		}
+		title:k_navarra = {
+			set_de_jure_liege_title = title:e_france
+		}
+		title:k_aragon = {
+			set_de_jure_liege_title = title:e_france
+		}
+		if = {
+			limit = {
+				OR = {
+					#exists = title:k_austria.holder
+					title:k_austria = { is_titular = yes }
+					title:e_hre = {
+						any_in_de_jure_hierarchy = {
+							continue = { tier >= tier_kingdom }
+							this = title:k_austria
+						}
+					}
+				}
+			}
+			title:k_austria = {
+				set_de_jure_liege_title = title:e_france
+			}
+		}
+		if = {
+			limit = {
+				OR = {
+					#exists = title:k_switzerland.holder
+					title:k_switzerland = { is_titular = yes }
+					title:e_hre = {
+						any_in_de_jure_hierarchy = {
+							continue = { tier >= tier_kingdom }
+							this = title:k_switzerland
+						}
+					}
+				}
+			}
+			title:k_switzerland = {
+				set_de_jure_liege_title = title:e_france
+			}
+		}
+	}
+	add_prestige = major_prestige_gain
+	if = {
+		limit = {
+			culture:french = {
+				NOT = {
+					has_innovation = innovation_knighthood
+				}
+			}
+		}
+		culture:french = {
+			add_innovation = innovation_knighthood
+		}
+	}
+	if = {
+		limit = {
+			culture:french = {
+			NOT = {
+					has_innovation = innovation_royal_prerogative
+				}
+			}
+		}
+		culture:french = {
+			add_innovation = innovation_royal_prerogative
+		}
+	}
+	if = {
+		limit = {
+			culture:french = {
+				NOT = {
+					has_innovation = innovation_primogeniture
+                    # Updated from innovation_heraldry to innovation_primogeniture to comply with new unlock
+				}
+			}
+		}
+		culture:french = {
+			add_innovation = innovation_primogeniture
+            # Updated from innovation_heraldry to innovation_primogeniture to comply with new unlock
+		}
+	}
+	if = {
+		limit = {
+			NOT = { has_realm_law = single_heir_succession_law }
+		}
+		add_realm_law_skip_effects = single_heir_succession_law
+	}
+	scope:scoped_emperor = {
+		add_prestige = major_prestige_loss
+		add_opinion = {
+			target = scope:scoped_ruler
+			modifier = pretender_opinion
+		}
+		destroy_title = title:e_hre
+	}
+}
