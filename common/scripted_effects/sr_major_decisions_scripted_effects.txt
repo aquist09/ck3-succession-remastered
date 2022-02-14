@@ -100,14 +100,14 @@ form_carolingian_empire_scripted_effect = {
 		limit = {
 			culture:french = {
 				NOT = {
-					has_innovation = innovation_hereditary_rule
-                    # Updated from innovation_heraldry to innovation_hereditary_rule to comply with new unlock
+					has_innovation = innovation_primogeniture
+                    # Updated from innovation_heraldry to innovation_primogeniture to comply with new unlock
 				}
 			}
 		}
 		culture:french = {
-			add_innovation = innovation_hereditary_rule
-            # Updated from innovation_heraldry to innovation_hereditary_rule to comply with new unlock
+			add_innovation = innovation_primogeniture
+            # Updated from innovation_heraldry to innovation_primogeniture to comply with new unlock
 		}
 	}
 	if = {
