@@ -13,7 +13,14 @@ crown_authority = {
 			#vassal_levy_contribution_mult = -0.1
 		}
 
-		can_keep = { realm_law_use_crown_authority = yes }
+		can_keep = { 
+			realm_law_use_crown_authority = yes
+			# [StA]
+			trigger_if = {
+				limit = { exists = global_var:StA_is_loaded }
+				NOT = { has_government = feudal_government }
+			}
+		}
 	}
 	
 	crown_authority_1 = {
@@ -26,7 +33,14 @@ crown_authority = {
 		flag = vassal_retraction_allowed
 		flag = can_change_partition_succession_laws
 
-		can_keep = { realm_law_use_crown_authority = yes }
+		can_keep = { 
+			realm_law_use_crown_authority = yes
+			# [StA]
+			trigger_if = {
+				limit = { exists = global_var:StA_is_loaded }
+				NOT = { has_government = feudal_government }
+			}
+		}
 
 		can_pass = {
 			trigger_if = {
@@ -88,7 +102,14 @@ crown_authority = {
 		flag = can_change_succession_laws
 		flag = titles_cannot_leave_realm_on_succession # Hardcoded flag
 		
-		can_keep = { realm_law_use_crown_authority = yes }
+		can_keep = { 
+			realm_law_use_crown_authority = yes
+			# [StA]
+			trigger_if = {
+				limit = { exists = global_var:StA_is_loaded }
+				NOT = { has_government = feudal_government }
+			}
+		}
 
 		can_pass = {
 			trigger_if = {
@@ -149,7 +170,14 @@ crown_authority = {
 		flag = can_designate_heirs_law
 		# Changed variable name from can_designate_heirs to can_designate_heirs_law in order to differenciate between required law and required innovation
 		
-		can_keep = { realm_law_use_crown_authority = yes }
+		can_keep = { 
+			realm_law_use_crown_authority = yes
+			# [StA]
+			trigger_if = {
+				limit = { exists = global_var:StA_is_loaded }
+				NOT = { has_government = feudal_government }
+			}
+		}
 
 		can_pass = {
 			has_realm_law = crown_authority_2
