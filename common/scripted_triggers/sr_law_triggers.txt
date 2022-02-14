@@ -16,20 +16,10 @@ can_have_partition_succession_law_trigger = {
 can_have_high_partition_succession_law_trigger = {
 	trigger_if = {
 		limit = {
-			OR = {
-				has_culture = culture:occitan
-				has_culture = culture:basque
-				has_culture = culture:aragonese
-				has_culture = culture:catalan
-			}
-			culture = {
-				NOT = { has_innovation = innovation_hereditary_rule }
-				# Updated from innovation_heraldry to innovation_hereditary_rule to comply with new unlock
+			NOT = { 
+				culture = { has_cultural_parameter = can_enact_high_partition_succession_law }
 			}
 		}
-		culture = { has_innovation = innovation_visigothic_codes }
-	}
-	trigger_else = {
 		culture = { has_innovation = innovation_hereditary_rule }
 		# Updated from innovation_heraldry to innovation_hereditary_rule to comply with new unlock
 	}
@@ -46,13 +36,10 @@ can_have_single_heir_dynasty_house_trigger = {
 	exists = house
 	trigger_if = {
 		limit = {
-			OR = {
-				has_culture = culture:czech
-				has_culture = culture:slovien
-			}
 			culture = {
-				NOT = {
-					has_innovation = innovation_hereditary_rule
+				OR = {
+					has_cultural_pillar = heritage_west_slavic
+					NOT = {	has_innovation = innovation_hereditary_rule }
 					# Updated from innovation_heraldry to innovation_hereditary_rule to comply with new unlock
 				}
 			}

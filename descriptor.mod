@@ -1,7 +1,8 @@
-version="0.5"
+version="1.1"
 tags={
 	"Historical"
 	"Gameplay"
+	"Balance"
 }
 name="Succession Remastered"
 supported_version="1.5.*"
